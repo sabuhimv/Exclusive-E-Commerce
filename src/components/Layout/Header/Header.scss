@@ -1,0 +1,63 @@
+@import "../../../style/styles.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 40px;
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid $line;
+
+  .links {
+    display: flex;
+    gap: 48px;
+
+    .nav-link {
+      font-weight: 500;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1px;
+        background-color: $label;
+        transition: width 0.3s ease;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .account-nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    .search-input {
+      display: flex;
+      position: relative;
+
+      img {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+      }
+    }
+
+    input {
+      background-color: $seconday-1;
+      border: none;
+      padding: 10px 70px 10px 20px;
+      border-radius: 4px;
+    }
+  }
+}
