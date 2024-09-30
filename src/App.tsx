@@ -1,12 +1,11 @@
-import './App.scss'
+// import './App.css';
+import Header from './components/Layout/Header/Header'
+import './style/styles.scss'
 
 function App() {
-
   return (
     <>
-      <p className='hello'>dsadas</p>
-      <h1>dsadas</h1>
-      <button>asd</button>
+    <Header/>
     </>
   )
 }
