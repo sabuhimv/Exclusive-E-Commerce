@@ -1,0 +1,80 @@
+@import "../../style/styles.scss";
+
+.signup {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  gap: 130px;
+  padding-top: 60px;
+  &__left {
+    img {
+      height: 80vh;
+    }
+  }
+
+  &__right {
+    h3 {
+      font-size: 36px;
+      font-weight: 500;
+      padding-bottom: 24px;
+    }
+    p {
+      font-weight: 500;
+    }
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding-top: 48px;
+
+      input {
+        border: none;
+        border-bottom: 1px solid $line;
+        padding-bottom: 8px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .button-primary {
+        background-color: $button-2;
+        color: $seconday-1;
+        border-radius: $radius-1;
+        outline: none;
+        border: none;
+        padding: 16px 0 16px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+      .button-primary:hover {
+        background-color: $button-2-hover;
+      }
+      .button-secondary {
+        background: none;
+        border-radius: $radius-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 0 10px;
+        border: 1px solid $line;
+        cursor: pointer;
+      }
+      .others {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: -18px;
+        span {
+          color: $label;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

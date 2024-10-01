@@ -1,0 +1,53 @@
+@import "../../style/styles.scss";
+
+.signup {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  gap: 130px;
+  padding-top: 60px;
+  &__left {
+    img {
+      height: 80vh;
+    }
+  }
+
+  &__right {
+    h3 {
+      font-size: 36px;
+      font-weight: 500;
+      padding-bottom: 24px;
+    }
+    p {
+      font-weight: 500;
+    }
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding-top: 48px;
+
+      input {
+        border: none;
+        border-bottom: 1px solid $line;
+        padding-bottom: 8px;
+      }
+
+      .login_buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+        .button-primary {
+          width: 40%;
+        }
+        .forgetPassword{
+            color: $button-2;
+            font-weight: 500;
+            cursor: pointer;
+        }
+      }
+    }
+  }
+}
