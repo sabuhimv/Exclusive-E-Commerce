@@ -11,6 +11,7 @@ import Login from './pages/LogIn/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Account from './pages/Account/Account';
+import Footer from './components/Layout/Footer/Footer';
 
 function App() {
   return (
@@ -25,7 +26,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
+
       <ToastContainer position='top-right' autoClose={2000} />
 
     </>

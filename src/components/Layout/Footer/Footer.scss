@@ -1,0 +1,64 @@
+@import "../../../style/styles.scss";
+
+.footer{
+    display: flex;
+    align-items: flex-start;
+    // justify-content: space-between;
+    gap: 60px;
+
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    background-color: $black;
+    color: $white;
+
+    a{
+        color: $white;
+    }
+    .footer-section{
+        &__heading{
+            font-size: 20px;
+            font-weight: 500;
+            padding-bottom: 24px;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .qrAndPayments{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .payments{
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+        .socials{
+            padding-top: 24px;
+            display: flex;
+            gap: 24px;
+
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+    padding-top: 16px;
+    padding-bottom: 26px;
+
+    background-color: $black;
+    color: $white;
+
+
+}
