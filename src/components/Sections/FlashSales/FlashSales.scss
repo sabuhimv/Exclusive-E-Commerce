@@ -1,0 +1,13 @@
+@import "../../../style/styles.scss";
+
+.flash-sales{
+    .section{
+        display: flex;
+        align-items: flex-end;
+        gap: 87px;
+        padding-bottom: 40px;
+    }
+    .section-body{
+        padding-bottom: 60px;
+    }
+}
