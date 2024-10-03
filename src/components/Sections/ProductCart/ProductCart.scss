@@ -10,6 +10,10 @@
   &__image {
     padding: 60px 40px 30px;
     height: 245px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__visit {
     display: flex;
@@ -24,6 +28,10 @@
     position: absolute;
     top: 12px;
     right: 12px;
+
+    img {
+      cursor: pointer;
+    }
   }
   &__discount {
     color: $white;
@@ -58,18 +66,18 @@
     }
   }
 
-  &__reviews{
+  &__reviews {
     display: flex;
     align-items: center;
     gap: 8px;
-    &_stars{
-        display: flex;
-        align-items: center;
+    &_stars {
+      display: flex;
+      align-items: center;
     }
-    &_reviewCount{
-        font-size: 14px;
-        color: $label;
-        font-weight: 600;
+    &_reviewCount {
+      font-size: 14px;
+      color: $label;
+      font-weight: 600;
     }
   }
 

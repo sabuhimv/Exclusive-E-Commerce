@@ -4,8 +4,9 @@ import eye from '../../../assets/icons/eye.svg'
 import heart from '../../../assets/icons/heart.svg'
 import star from '../../../assets/icons/star.svg'
 import emptyStar from '../../../assets/icons/emptyStar.svg'
+import { Link } from 'react-router-dom';
 
-const ProductCart = ({ name, price, old_price, discount, stars, reviews,image }: any) => {
+const ProductCart = ({ name, price, old_price, discount, stars, reviews, image }: any) => {
 
     const renderStars = (rating: number) => {
         const totalStars = 5;

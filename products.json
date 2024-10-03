@@ -30,10 +30,51 @@
     "name": "IPS LCD Gaming Monitor",
     "description": "AK-900 Wired Keyboard 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
     "image": "/productImages/IPS LCD Gaming Monitor.svg",
+    "size": "S",
+    "color": "Black",
+    "price": 370,
+    "old_price": 400,
+    "discount": 30,
+    "stars": 3,
+    "reviews": 38
+  },
+  {
+    "id": 4,
+    "name": "S-Series Comfort Chair",
+    "description": "AK-900 Wired Keyboard 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
+    "image": "/productImages/S-Series Comfort Chair.svg",
+    "size": "S",
+    "color": "Brown",
+    "price": 375,
+    "old_price": 400,
+    "discount": 25,
+    "stars": 5,
+    "reviews": 99
+  },
+  {
+    "id": 5,
+    "name": "Gucci duffle bag",
+    "description": "AK-900 Wired Keyboard 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
+    "image": "/productImages/Gucci duffle bag.svg",
     "size": "XL",
-    "color": "White",
-    "price": 3000,
-    "stars": 4,
-    "reviews": 150
+    "color": "Brown",
+    "price": 960,
+    "old_price": 1600,
+    "discount": 35,
+    "stars": 5,
+    "reviews": 88
+  },
+  {
+    "id": 6,
+    "name": "ASUS FHD Gaming Laptop",
+    "description": "AK-900 Wired Keyboard 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
+    "image": "/productImages/ASUS FHD Gaming Laptop.svg",
+    "size": "XL",
+    "color": "Brown",
+    "price": 960,
+    "old_price": 1160,
+    "discount": 35,
+    "stars": 5,
+    "reviews": 88
   }
 ]
