@@ -1,6 +1,6 @@
 .flash-sales {
-    padding-top: 80px;
-    padding-bottom: 140px;
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 .section-title {
@@ -18,8 +18,16 @@
   padding-bottom: 24px;
 }
 
-.sections-name{
-    font-size: 36px;
-    font-weight: 600;
-    color: $black;
+.sections-name {
+  font-size: 36px;
+  font-weight: 600;
+  color: $black;
+}
+
+.section {
+  padding-bottom: 40px;
+}
+
+.section-body {
+  padding-bottom: 40px;
 }

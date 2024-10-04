@@ -1,0 +1,29 @@
+@import "../../style/styles.scss";
+
+.category {
+  border: 1px solid $label;
+  padding: 40px;
+  border-radius: $radius-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 20%;
+  cursor: pointer;
+  transition: all .5s ease;
+
+  &__image {
+    font-size: 48px;
+  }
+
+  p {
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: $button-2;
+    color: $white;
+    transform: scale(1.1);
+  }
+}

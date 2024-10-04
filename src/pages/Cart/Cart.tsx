@@ -60,18 +60,6 @@ const Cart: React.FC = () => {
                     </div>
                 </div>
             </div>
-            {/* <ul>
-                {cartItems.map((item) => (
-                    <li key={item.id}>
-                        {item.title} - {item.quantity} - {item.price} - ${item.subtotalPrice.toFixed(2)} (x{item.quantity})
-                        <img src={item.image} alt="" />
-                        <button onClick={() => dispatch(removeItemFromCart(item.id))}>Remove</button>
-                    </li>
-                ))}
-            </ul> */}
-            {/* <p>Total Quantity: {totalQuantity}</p>
-            <p>Total Amount: ${totalAmount.toFixed(2)}</p>
-            <button onClick={() => dispatch(clearCart())}>Clear Cart</button> */}
         </div>
     );
 };
