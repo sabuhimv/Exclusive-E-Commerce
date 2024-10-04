@@ -5,13 +5,64 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-
 .container {
   padding-left: 135px;
   padding-right: 135px;
 }
 
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
 
+.swiper-pagination-bullet-active {
+  background-color: $button-2;
+  transform: scale(1.1);
+}
+
+.button-red {
+  border-radius: $radius-1;
+  background-color: $button-2;
+  color: $white;
+  padding: 16px 48px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  a {
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $button-2-hover;
+    border-color: $button-2;
+  }
+}
+
+.button-transparent {
+  background-color: transparent;
+  color: $black;
+  padding: 16px 42px;
+  border: 1px solid $label;
+  border-radius: $radius-1;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.page-heading {
+  color: $black;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &__active {
+    font-weight: 500;
+  }
+}
 
 @media (max-width: $large-desktop) {
   .container {

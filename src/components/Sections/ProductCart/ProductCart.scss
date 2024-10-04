@@ -6,16 +6,51 @@
 
   &__top {
     background-color: #f5f5f5;
+
+    transition: all 0.5s ease;
   }
   &__image {
     padding: 60px 40px 30px;
     height: 245px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    transition: all 0.5s ease;
   }
+
+  &__overlay {
+    position: absolute;
+    background-color: $black;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: $radius-1;
+    bottom: 0;
+    width: 100%;
+    height: 38px;
+    overflow: hidden;
+    transition: all 2.5s ease;
+    display: none;
+
+    p {
+      color: $white;
+    }
+  }
+  .product-cart__overlay.hovered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__visit {
     display: flex;
     justify-content: space-between;
     position: relative;
   }
+
   &__getDetail {
     display: flex;
     flex-direction: column;
@@ -24,6 +59,10 @@
     position: absolute;
     top: 12px;
     right: 12px;
+
+    img {
+      cursor: pointer;
+    }
   }
   &__discount {
     color: $white;
@@ -58,18 +97,18 @@
     }
   }
 
-  &__reviews{
+  &__reviews {
     display: flex;
     align-items: center;
     gap: 8px;
-    &_stars{
-        display: flex;
-        align-items: center;
+    &_stars {
+      display: flex;
+      align-items: center;
     }
-    &_reviewCount{
-        font-size: 14px;
-        color: $label;
-        font-weight: 600;
+    &_reviewCount {
+      font-size: 14px;
+      color: $label;
+      font-weight: 600;
     }
   }
 

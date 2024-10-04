@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Account from './pages/Account/Account';
 import Footer from './components/Layout/Footer/Footer';
+import Cart from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
