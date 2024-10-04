@@ -38,14 +38,14 @@ const FlashSales = () => {
                         pagination={{ clickable: true }}
                         spaceBetween={50}
                         slidesPerView={4}
-                        autoplay={{
-                            delay: 1000,
-                            disableOnInteraction: true,
-                        }}
+                        // autoplay={{
+                        //     delay: 1000,
+                        //     disableOnInteraction: true,
+                        // }}
                     >
                         {products.map((product) => (
                             <SwiperSlide key={product.id}>
-                                <ProductCart key={product.id} name={product.name} image={product.image} price={product.price} old_price={product?.old_price} discount={product.discount} stars={product.stars} reviews={product.reviews} />
+                                <ProductCart key={product.id} id={product.id} title={product.title} image={product.image} price={product.price} old_price={product?.old_price} discount={product.discount} stars={product.stars} reviews={product.reviews} />
                             </SwiperSlide>
                         ))}
                     </Swiper>

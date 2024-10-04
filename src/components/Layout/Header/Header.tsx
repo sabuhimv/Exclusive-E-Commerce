@@ -10,6 +10,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.scss'
 import { signOut } from 'firebase/auth';
 import { auth } from '../../../firebase/Firebase';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
 const Header = () => {
 
@@ -21,6 +23,9 @@ const Header = () => {
         localStorage.removeItem("loggedUserId")
         navigate("/signup")
     }
+
+    const totalQuantity = useSelector((state: RootState) => state.cart.totalQuantity);
+
     return (
         <div className='header container'>
             <div className="logo">
@@ -39,12 +44,13 @@ const Header = () => {
                     <input type="text" placeholder='What are you looking for?' />
                     <img src={Search} alt="" />
                 </div>
-                <a href="">
+                <Link to={"/wishlist"}>
                     <img src={Wishlist} alt="" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="/cart" className='account-nav-cart'>
                     <img src={Cart} alt="" />
-                </a>
+                    <span className='cart_count'>{totalQuantity}</span>
+                </Link>
                 {
                     localStorage.getItem("loggedUserId") ?
                         <Link to="/account">

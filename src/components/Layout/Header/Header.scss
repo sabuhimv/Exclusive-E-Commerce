@@ -63,5 +63,21 @@
       padding: 10px 70px 10px 20px;
       border-radius: 4px;
     }
+
+    .account-nav-cart {
+      position: relative;
+    }
+
+    .cart_count {
+      background-color: $button-2;
+      color: $white;
+      border-radius: 50%;
+      padding: 1px 3px;
+      font-size: 12px;
+
+      position: absolute;
+      top: -2px;
+      right: -2px;
+    }
   }
 }

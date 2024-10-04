@@ -1,0 +1,81 @@
+@import "../../style/styles.scss";
+
+.cart {
+  table {
+    width: 100%;
+  }
+  th {
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 24px;
+  }
+  td {
+    vertical-align: middle;
+    height: 100px;
+    border-bottom: 1px solid $line;
+  }
+  .product {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 500;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 24px 0 80px;
+  }
+
+  .cuponAndCart {
+    padding-bottom: 140px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .cupon {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+
+      input {
+        padding: 16px 100px 16px 16px;
+        border-radius: $radius-1;
+      }
+    }
+
+    .total {
+      border: 2px solid $label;
+      padding: 32px;
+      border-radius: $radius-1;
+
+      width: 35%;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        padding-bottom: 24px;
+      }
+      p {
+        border-bottom: 1px solid $label;
+        padding-bottom: 10px;
+        padding-top: 20px;
+
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        margin-top: 20px;
+        width: 250px;
+      }
+    }
+  }
+}

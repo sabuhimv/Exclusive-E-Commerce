@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductCart.scss';
 import eye from '../../../assets/icons/eye.svg'
 import heart from '../../../assets/icons/heart.svg'
 import star from '../../../assets/icons/star.svg'
 import emptyStar from '../../../assets/icons/emptyStar.svg'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../../../redux/cartSlice';
 
-const ProductCart = ({ name, price, old_price, discount, stars, reviews, image }: any) => {
+interface ProductProps {
+    id: number;
+    title: string;
+    price: number;
+    old_price: number;
+    discount: number;
+    stars: number;
+    reviews: number;
+    image: string;
+}
+
+const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, discount, stars, reviews, image }: any) => {
 
     const renderStars = (rating: number) => {
         const totalStars = 5;
@@ -21,10 +34,20 @@ const ProductCart = ({ name, price, old_price, discount, stars, reviews, image }
         return starsArray;
     };
 
+    const [isHovered, setIsHovered] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const addToCartHandler = () => {
+        dispatch(addItemToCart({ id, title, image, price }));
+    };
+
 
     return (
-        <div className='product-cart'>
-            <div className="product-cart__top">
+        <div className='product-cart' key={id}>
+            <div className="product-cart__top"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}>
                 <div className='product-cart__visit'>
                     {
                         discount ? <div className="product-cart__discount">-{discount}%</div> : null
@@ -35,12 +58,16 @@ const ProductCart = ({ name, price, old_price, discount, stars, reviews, image }
                         <img src={eye} alt="" />
                     </div>
                 </div>
-                <div className='product-cart__image'>
+                <div className='product-cart__image' >
                     <img src={image} alt="" />
+                    <div onClick={addToCartHandler} className={`product-cart__overlay ${isHovered ? 'hovered' : ''}`}
+                    >
+                        <p>Add To Cart</p>
+                    </div>
                 </div>
             </div>
             <div className="product-cart__body">
-                <p className='product-cart__productName'>{name}</p>
+                <p className='product-cart__productName'>{title}</p>
                 <div className='product-cart__prices'>
                     <span className='product-cart__prices_new-price'>{price}</span>
                     <span className='product-cart__prices_old-price'>{old_price}</span>
