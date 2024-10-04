@@ -4,7 +4,7 @@ import eye from '../../../assets/icons/eye.svg'
 import heart from '../../../assets/icons/heart.svg'
 import star from '../../../assets/icons/star.svg'
 import emptyStar from '../../../assets/icons/emptyStar.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../../redux/cartSlice';
 
@@ -42,6 +42,12 @@ const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, disc
         dispatch(addItemToCart({ id, title, image, price }));
     };
 
+    const navigate = useNavigate();
+
+    const handleGetDetails = (id: number) => {
+        navigate(`/product/${id}`);
+    };
+
 
     return (
         <div className='product-cart' key={id}>
@@ -53,9 +59,9 @@ const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, disc
                         discount ? <div className="product-cart__discount">-{discount}%</div> : null
                     }
 
-                    <div className='product-cart__getDetail'>
+                    <div className='product-cart__wishlistAndDetails'>
                         <img src={heart} alt="" />
-                        <img src={eye} alt="" />
+                        <div onClick={() => handleGetDetails(id)}><img className='product-cart__details' src={eye} alt="" /></div>
                     </div>
                 </div>
                 <div className='product-cart__image' >

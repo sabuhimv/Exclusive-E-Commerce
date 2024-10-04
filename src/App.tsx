@@ -2,7 +2,7 @@ import React from 'react'
 // import './App.css';
 import Header from './components/Layout/Header/Header'
 import './style/styles.scss'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import SignUp from './pages/SignUp/SignUp';
@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Account from './pages/Account/Account';
 import Footer from './components/Layout/Footer/Footer';
 import Cart from './pages/Cart/Cart';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path={"/product/:id"} element={<ProductDetails />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
 
       <ToastContainer position='top-right' autoClose={2000} />

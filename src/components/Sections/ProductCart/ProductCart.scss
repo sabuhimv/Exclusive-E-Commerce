@@ -49,9 +49,11 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+
+    z-index: 999;
   }
 
-  &__getDetail {
+  &__wishlistAndDetails {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -60,9 +62,12 @@
     top: 12px;
     right: 12px;
 
-    img {
+    a {
       cursor: pointer;
     }
+  }
+  &__details{
+    cursor: pointer;
   }
   &__discount {
     color: $white;
