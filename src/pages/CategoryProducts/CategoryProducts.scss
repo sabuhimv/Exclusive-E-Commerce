@@ -1,5 +1,9 @@
 @import "../../style/styles.scss";
 
-.category-products{
-    // display: flex
+.category-products {
+  .products {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
 }
