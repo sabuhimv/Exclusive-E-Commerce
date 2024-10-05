@@ -4,9 +4,13 @@ import eye from '../../../assets/icons/eye.svg'
 import heart from '../../../assets/icons/heart.svg'
 import star from '../../../assets/icons/star.svg'
 import emptyStar from '../../../assets/icons/emptyStar.svg'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../../redux/cartSlice';
+import { addItemToWishlist } from '../../../redux/wishlistSlice';
+import { FaRegHeart } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
 interface ProductProps {
     id: number;
@@ -21,6 +25,12 @@ interface ProductProps {
 
 const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, discount, stars, reviews, image }: any) => {
 
+    const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
+    const [isHovered, setIsHovered] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const renderStars = (rating: number) => {
         const totalStars = 5;
         const starsArray = [];
@@ -34,20 +44,17 @@ const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, disc
         return starsArray;
     };
 
-    const [isHovered, setIsHovered] = useState(false);
-
-    const dispatch = useDispatch();
-
     const addToCartHandler = () => {
         dispatch(addItemToCart({ id, title, image, price }));
     };
 
-    const navigate = useNavigate();
+    const addToWishlistHandler = () => {
+        dispatch(addItemToWishlist({ id, title, image, price, old_price, discount, stars, reviews }));
+    }
 
     const handleGetDetails = (id: number) => {
         navigate(`/product/${id}`);
     };
-
 
     return (
         <div className='product-cart' key={id}>
@@ -60,7 +67,7 @@ const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, disc
                     }
 
                     <div className='product-cart__wishlistAndDetails'>
-                        <img src={heart} alt="" />
+                        <div onClick={addToWishlistHandler} className={`product-cart__heart ${(wishlistItems.some((item) => item.id == id)) ? 'selected-wishlist' : ''}`}><FaRegHeart /></div>
                         <div onClick={() => handleGetDetails(id)}><img className='product-cart__details' src={eye} alt="" /></div>
                     </div>
                 </div>

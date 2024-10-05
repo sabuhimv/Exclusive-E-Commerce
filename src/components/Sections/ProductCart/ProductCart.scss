@@ -69,6 +69,16 @@
   &__details{
     cursor: pointer;
   }
+  &__heart {
+    cursor: pointer;
+    padding: 10px;
+    background-color: $white;
+    border-radius: 50%;
+  }
+  .selected-wishlist{
+    background-color: $button-2;
+    color: $white;
+  }
   &__discount {
     color: $white;
     background-color: $button-2;

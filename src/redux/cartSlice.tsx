@@ -22,7 +22,7 @@ const initialState: CartState = {
     totalAmount: 0,
 };
 
-export const counterSlice = createSlice({
+export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
@@ -72,6 +72,6 @@ export const counterSlice = createSlice({
 })
 
 
-export const { addItemToCart, removeItemFromCart, clearCart } = counterSlice.actions
+export const { addItemToCart, removeItemFromCart, clearCart } = cartSlice.actions
 
-export default counterSlice.reducer
+export default cartSlice.reducer
