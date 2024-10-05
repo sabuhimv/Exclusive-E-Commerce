@@ -1,1 +1,122 @@
 @import "../../style/styles.scss";
+
+.details {
+  .details-body {
+    display: flex;
+    gap: 70px;
+
+    .details-image {
+      background-color: $element-bg;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 70%;
+      }
+    }
+    .details-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h3 {
+        color: $black;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .details-reviews {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .details-price {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      .details-description {
+        font-weight: 500;
+      }
+      .sizes-section {
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+        p {
+          font-size: 24px;
+          font-weight: 500;
+        }
+        .sizes {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding-left: 10px;
+
+          .size {
+            padding: 10px;
+            width: 40px;
+            text-align: center;
+            border: 1px solid $label;
+            border-radius: $radius-1;
+            cursor: pointer;
+            font-weight: 600;
+            &:hover {
+              background-color: $button-2;
+              color: $white;
+              border-color: transparent;
+            }
+          }
+          .selected-size {
+            background-color: $button-2;
+            color: $white;
+            border-color: transparent;
+          }
+        }
+      }
+      .fixing {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-top: 15px;
+
+        a {
+          border: 1px solid $label;
+          padding: 6px;
+          border-radius: $radius-1;
+        }
+      }
+
+      .delivery {
+        // border: 1px solid $label;
+        padding-top: 15px;
+        .free-delivery, .return-delivery{
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            border: 1px solid $label;
+            width: 60%;
+            
+            .delivery-details{
+                p{
+                    font-weight: 500;
+                    font-size: 18px;
+                    padding-bottom: 4px;
+                }
+                span{
+                    font-weight: 500;
+                    font-size: 12px;
+                }
+            }
+        }
+      }
+    }
+  }
+  .related{
+    padding-top: 140px;
+
+    .related-products{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+  }
+}

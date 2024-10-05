@@ -14,6 +14,7 @@ import Account from './pages/Account/Account';
 import Footer from './components/Layout/Footer/Footer';
 import Cart from './pages/Cart/Cart';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import CategoryProducts from './pages/CategoryProducts/CategoryProducts';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />
           <Route path={"/product/:id"} element={<ProductDetails />} />
+          <Route path={"/category/:title"} element={<CategoryProducts />} />
         </Routes>
         <Footer />
       </BrowserRouter>
