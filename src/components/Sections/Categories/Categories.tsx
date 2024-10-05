@@ -25,12 +25,12 @@ const Categories = () => {
       </div>
 
       <div className="section-body">
-        <Category title={"Electronics"} image={<CiDesktop />} url={CategoryUrls.Electronics} />
-        <Category title={"Home & Kitchen"} image={<PiArmchairLight />} url={CategoryUrls.HomeAndKitchen}/>
-        <Category title={"Fashion"} image={<GiClothes />} url={CategoryUrls.Fashion}/>
-        <Category title={"Grocery & Food"} image={<IoFastFoodOutline />} url={CategoryUrls.GroceryAndFood}/>
-        <Category title={"Beauty & Personal Care"} image={<FaUserDoctor />} url={CategoryUrls.BeautyAndPersonalCare}/>
-        <Category title={"Sports & Outdoors"} image={<IoFootballOutline />} url={CategoryUrls.SportsAndOutdoors}/>
+        <Category title={"Electronics"} image={<CiDesktop />} url={"category" + CategoryUrls.Electronics} />
+        <Category title={"Home & Kitchen"} image={<PiArmchairLight />} url={"category" + CategoryUrls.HomeAndKitchen} />
+        <Category title={"Fashion"} image={<GiClothes />} url={"category" + CategoryUrls.Fashion} />
+        <Category title={"Grocery & Food"} image={<IoFastFoodOutline />} url={"category" + CategoryUrls.GroceryAndFood} />
+        <Category title={"Beauty & Personal Care"} image={<FaUserDoctor />} url={"category" + CategoryUrls.BeautyAndPersonalCare} />
+        <Category title={"Sports & Outdoors"} image={<IoFootballOutline />} url={"category" + CategoryUrls.SportsAndOutdoors} />
       </div>
     </div>
   )

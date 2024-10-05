@@ -4,5 +4,5 @@ export enum CategoryUrls {
     Fashion = "/fashion",
     GroceryAndFood = "/grocery-and-food",
     BeautyAndPersonalCare = "/beauty-and-personalcare",
-    SportsAndOutdoors = "/sports-outdoors",
+    SportsAndOutdoors = "/sports-and-outdoors",
 }
