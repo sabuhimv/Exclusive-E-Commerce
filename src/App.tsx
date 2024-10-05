@@ -17,6 +17,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import CategoryProducts from './pages/CategoryProducts/CategoryProducts';
 import Wishlist from './pages/Wishlist/Wishlist';
 import AllProducts from './pages/Products/Products';
+import ErrorPage from './pages/Error/ErrorPage';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/all-products" element={<AllProducts />} />
           <Route path={"/product/:id"} element={<ProductDetails />} />
           <Route path={"/category/:title"} element={<CategoryProducts />} />
+          <Route path={"/*"} element={<ErrorPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
