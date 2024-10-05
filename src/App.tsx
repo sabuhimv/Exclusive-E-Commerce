@@ -15,6 +15,7 @@ import Footer from './components/Layout/Footer/Footer';
 import Cart from './pages/Cart/Cart';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import CategoryProducts from './pages/CategoryProducts/CategoryProducts';
+import Wishlist from './pages/Wishlist/Wishlist';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path={"/product/:id"} element={<ProductDetails />} />
           <Route path={"/category/:title"} element={<CategoryProducts />} />
         </Routes>

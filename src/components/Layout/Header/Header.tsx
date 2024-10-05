@@ -26,7 +26,8 @@ const Header = () => {
     }
 
     const totalQuantity = useSelector((state: RootState) => state.cart.totalQuantity);
-
+    const wishlistCount = useSelector((state:RootState)=> state.wishlist.totalCount);
+    
     return (
         <div className='header container'>
             <div className="logo">
@@ -45,10 +46,11 @@ const Header = () => {
                     <input type="text" placeholder='What are you looking for?' />
                     <img src={Search} alt="" />
                 </div>
-                <Link to={"/wishlist"}>
+                <Link to={"/wishlist"} className='account-nav-cart'>
                     <img src={Wishlist} alt="" />
+                    <span className='cart_count'>{wishlistCount}</span>
                 </Link>
-                <Link to="/cart" className='account-nav-cart'>
+                <Link to="/cart" className='account-nav-wishlist'>
                     <img src={Cart} alt="" />
                     <span className='cart_count'>{totalQuantity}</span>
                 </Link>
@@ -56,9 +58,9 @@ const Header = () => {
                     localStorage.getItem("loggedUserId") ?
                         <Link to="/account">
                             {
-                                location.pathname==='/account' ? <img src={SelectedAccount} alt="" /> : <img src={Account} alt="" /> 
+                                location.pathname === '/account' ? <img src={SelectedAccount} alt="" /> : <img src={Account} alt="" />
                             }
-                            
+
                         </Link> : ""
                 }
             </div>
