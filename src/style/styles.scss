@@ -74,6 +74,11 @@ body {
   text-align: center;
 }
 
+.discount-products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
 @media (max-width: $large-desktop) {
   .container {
     padding-left: 100px;

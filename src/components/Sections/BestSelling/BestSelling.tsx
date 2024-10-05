@@ -52,9 +52,7 @@ const BestSelling = () => {
             </div>
 
             <div className='section-viewall'>
-                <button className='button-red'>
-                    <Link to="/products">View All Products</Link>
-                </button>
+                <Link to="/all-products" className='button-red'>View All Products</Link>
             </div>
         </div>
     )
