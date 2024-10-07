@@ -79,13 +79,10 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
-
 input::placeholder {
-  background-color: $seconday-1;
   color: $placeholder;
 }
 textarea::placeholder {
-  background-color: $seconday-1;
   color: $placeholder;
 }
 @media (max-width: $large-desktop) {
