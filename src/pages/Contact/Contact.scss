@@ -1,0 +1,58 @@
+@import "../../style/styles.scss";
+
+.container{
+    .contact-container{
+        display: flex;
+        gap: 60px;
+
+        &_left{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            p{
+                font-weight: 500;
+                font-size: 16px;
+            }
+            &_call,&_write{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                span{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &_right{
+            .inputs{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                padding-bottom: 20px;
+            }
+            input{
+                padding: 13px;
+                background-color: $seconday-1;
+                border: none;
+                outline: none;
+                border-radius: $radius-1;
+            }
+            textarea{
+                resize: none;
+                background-color: $seconday-1;
+                padding: 13px;
+                width: 100%;
+                outline: none;
+                border: none;
+                margin-bottom: 15px;
+            }
+            button{
+                float: right;
+            }
+
+            
+        }
+    }
+}
