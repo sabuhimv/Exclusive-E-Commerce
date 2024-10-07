@@ -54,7 +54,7 @@ body {
   font-size: 14px;
   transition: background-color 0.5s ease;
 
-  &:hover{
+  &:hover {
     background-color: $button-1-hover;
     color: $white;
   }
@@ -74,10 +74,19 @@ body {
   text-align: center;
 }
 
-.discount-products{
+.discount-products {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+}
+
+input::placeholder {
+  background-color: $seconday-1;
+  color: $placeholder;
+}
+textarea::placeholder {
+  background-color: $seconday-1;
+  color: $placeholder;
 }
 @media (max-width: $large-desktop) {
   .container {
