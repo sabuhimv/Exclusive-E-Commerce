@@ -6,9 +6,9 @@ import BestSelling from '../../components/Sections/BestSelling/BestSelling'
 const Home = () => {
   return (
     <div>
-      <FlashSales/>
-      <Categories/>
-      <BestSelling/>
+      <Categories />
+      <FlashSales />
+      <BestSelling />
     </div>
   )
 }

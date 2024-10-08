@@ -21,7 +21,7 @@ const Categories = () => {
       </div>
 
       <div className='section'>
-        <p className='sections-name'>Flash Sales</p>
+        <p className='sections-name'>Browse By Category</p>
       </div>
 
       <div className="section-body">
