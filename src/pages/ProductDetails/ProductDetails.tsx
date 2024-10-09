@@ -30,7 +30,7 @@ const ProductDetails = () => {
 
     const location = useLocation();
 
-    const productId = location.pathname.substring(location.pathname.length - 1, location.pathname.length)
+    const productId = location.pathname.substring(9, location.pathname.length)
 
     const product: any = products.filter(product => product.id == productId)
 

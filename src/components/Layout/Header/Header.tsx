@@ -13,6 +13,8 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../../firebase/Firebase';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../i18/i18n';
 
 const Header = () => {
 
@@ -26,45 +28,65 @@ const Header = () => {
     }
 
     const totalQuantity = useSelector((state: RootState) => state.cart.totalQuantity);
-    const wishlistCount = useSelector((state:RootState)=> state.wishlist.totalCount);
-    
-    return (
-        <div className='header container'>
-            <div className="logo">
-                <img src={Logo} alt="Exclusive" />
-            </div>
-            <div className="links">
-                <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} >Home</Link>
-                <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} >Contact</Link>
-                <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} >About</Link>
-                {
-                    localStorage.getItem("loggedUserId") ? <Link to="/signup" onClick={logout} className={`nav-link`}>Log Out</Link> : <Link to="/signup" className={`nav-link ${location.pathname === '/signup' ? 'active' : ''}`}>Sign Up</Link>
-                }
-            </div>
-            <div className="account-nav">
-                <div className='search-input'>
-                    <input type="text" placeholder='What are you looking for?' />
-                    <img src={Search} alt="" />
-                </div>
-                <Link to={"/wishlist"} className='account-nav-cart'>
-                    <img src={Wishlist} alt="" />
-                    <span className='cart_count'>{wishlistCount}</span>
-                </Link>
-                <Link to="/cart" className='account-nav-wishlist'>
-                    <img src={Cart} alt="" />
-                    <span className='cart_count'>{totalQuantity}</span>
-                </Link>
-                {
-                    localStorage.getItem("loggedUserId") ?
-                        <Link to="/account">
-                            {
-                                location.pathname === '/account' ? <img src={SelectedAccount} alt="" /> : <img src={Account} alt="" />
-                            }
+    const wishlistCount = useSelector((state: RootState) => state.wishlist.totalCount);
 
-                        </Link> : ""
-                }
+    const { t } = useTranslation();
+
+    const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        i18n.changeLanguage(event.target.value);
+    };
+
+    return (
+        <>
+            <div className='header-top container'>
+                <p>{t('Header.Add')}</p>
+                <select onChange={handleLanguageChange} defaultValue={i18n.language} className="language-selector">
+                    <option value="en">En</option>
+                    <option value="az">Az</option>
+                </select>
+
             </div>
-        </div>
+
+
+            <div className='header container'>
+
+                <div className="logo">
+                    <img src={Logo} alt="Exclusive" />
+                </div>
+                <div className="links">
+                    <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} >{t('Header.Home')}</Link>
+                    <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} >{t('Header.Contact')}</Link>
+                    <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} >{t('Header.About')}</Link>
+                    {
+                        localStorage.getItem("loggedUserId") ? <Link to="/signup" onClick={logout} className={`nav-link`}>{t('Header.Log_out')}</Link> : <Link to="/signup" className={`nav-link ${location.pathname === '/signup' ? 'active' : ''}`}>{t('Header.Sign_up')}</Link>
+                    }
+                </div>
+                <div className="account-nav">
+                    <div className='search-input'>
+                        <input type="text" placeholder={t('Header.Search')} />
+                        <img src={Search} alt="" />
+                    </div>
+                    <Link to={"/wishlist"} className='account-nav-cart'>
+                        <img src={Wishlist} alt="" />
+                        <span className='cart_count'>{wishlistCount}</span>
+                    </Link>
+                    <Link to="/cart" className='account-nav-wishlist'>
+                        <img src={Cart} alt="" />
+                        <span className='cart_count'>{totalQuantity}</span>
+                    </Link>
+                    {
+                        localStorage.getItem("loggedUserId") ?
+                            <Link to="/account">
+                                {
+                                    location.pathname === '/account' ? <img src={SelectedAccount} alt="" /> : <img src={Account} alt="" />
+                                }
+
+                            </Link> : ""
+                    }
+                </div>
+            </div>
+        </>
+
     )
 }
 

@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './App.css';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.ts';
+import './i18/i18n.tsx'; // i18n dosyasını import edin
 
 
 createRoot(document.getElementById('root')!).render(

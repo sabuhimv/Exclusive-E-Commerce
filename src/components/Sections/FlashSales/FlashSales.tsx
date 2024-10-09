@@ -11,23 +11,27 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
+import { useTranslation } from 'react-i18next';
+
 const FlashSales = () => {
 
     const [products, setProducts] = useState<any[]>([]);
+    const { t } = useTranslation();
 
     useEffect(() => {
         setProducts(productData)
     }, [])
 
+
     return (
         <div className='container flash-sales'>
             <div className="section-heading">
                 <img src={section_heading} alt="" />
-                <p className='section-title'>Today's</p>
+                <p className='section-title'>{t('FlashSales.Heading')}</p>
             </div>
 
             <div className='section'>
-                <p className='sections-name'>Flash Sales</p>
+                <p className='sections-name'>{t('FlashSales.Title')}</p>
                 <FlashSaleCountdown endTime="2024-10-29T23:59:59" />
             </div>
 
@@ -54,7 +58,7 @@ const FlashSales = () => {
             </div>
 
             <div className='section-viewall'>
-                    <Link to="/all-products" className='button-red'>View All Products</Link>
+                <Link to="/all-products" className='button-red'>{t('FlashSales.Button')}</Link>
             </div>
         </div>
     )

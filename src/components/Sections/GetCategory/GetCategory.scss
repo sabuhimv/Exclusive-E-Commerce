@@ -1,0 +1,47 @@
+@import "../../../style/styles.scss";
+
+.getcategory {
+  padding-top: 40px;
+  display: flex;
+
+  &-left {
+    border-right: 1px solid $line;
+    padding-right: 50px;
+    a {
+      display: block;
+      padding: 16px 0;
+      font-weight: 500;
+      font-size: 18px;
+        transition: all .5s ease;
+      &:hover{
+        color: $button-2;
+        scale: 1.01;
+      }
+    }
+  }
+  .getcategory-right {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 400px;
+    padding-left: 50px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .swiper-pagination {
+    top: 360px;
+  }
+}

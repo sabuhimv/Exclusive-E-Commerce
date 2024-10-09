@@ -10,10 +10,12 @@ import productData from '../../../../products.json'
 import ProductCart from '../ProductCart/ProductCart';
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const BestSelling = () => {
 
     const [products, setProducts] = useState<any[]>([]);
+    const {t} = useTranslation();
 
     useEffect(() => {
         setProducts(productData)
@@ -23,10 +25,10 @@ const BestSelling = () => {
         <div className='container  flash-sales'>
             <div className="section-heading">
                 <img src={section_heading} alt="" />
-                <p className='section-title'>This Month</p>
+                <p className='section-title'>{t('BestSelling.Heading')}</p>
             </div>
             <div className='section'>
-                <p className='sections-name'>Best Selling Products</p>
+                <p className='sections-name'>{t('BestSelling.Title')}</p>
             </div>
 
             <div className="section-body">
@@ -52,7 +54,7 @@ const BestSelling = () => {
             </div>
 
             <div className='section-viewall'>
-                <Link to="/all-products" className='button-red'>View All Products</Link>
+                <Link to="/all-products" className='button-red'>{t('BestSelling.Button')}</Link>
             </div>
         </div>
     )
