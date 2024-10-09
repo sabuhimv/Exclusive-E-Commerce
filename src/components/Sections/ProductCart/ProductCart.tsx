@@ -11,6 +11,7 @@ import { addItemToWishlist } from '../../../redux/wishlistSlice';
 import { FaRegHeart } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
+import { useTranslation } from 'react-i18next';
 
 interface ProductProps {
     id: number;
@@ -27,9 +28,9 @@ const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, disc
 
     const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
     const [isHovered, setIsHovered] = useState(false);
-    const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const { t } = useTranslation();
 
     const renderStars = (rating: number) => {
         const totalStars = 5;
@@ -45,7 +46,12 @@ const ProductCart: React.FC<ProductProps> = ({ id, title, price, old_price, disc
     };
 
     const addToCartHandler = () => {
-        dispatch(addItemToCart({ id, title, image, price }));
+        if (localStorage.getItem("loggedUserId")) {
+            dispatch(addItemToCart({ id, title, image, price }));
+        }
+        else {
+            navigate("/signup")
+        }
     };
 
     const addToWishlistHandler = () => {

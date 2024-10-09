@@ -39,10 +39,10 @@ const Header = () => {
     return (
         <>
             <div className='header-top container'>
-                <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+                <p>{t('Header.Add')}</p>
                 <select onChange={handleLanguageChange} defaultValue={i18n.language} className="language-selector">
-                    <option value="en">English</option>
-                    <option value="az">Azərbaycanca</option>
+                    <option value="en">En</option>
+                    <option value="az">Az</option>
                 </select>
 
             </div>
@@ -63,7 +63,7 @@ const Header = () => {
                 </div>
                 <div className="account-nav">
                     <div className='search-input'>
-                        <input type="text" placeholder='What are you looking for?' />
+                        <input type="text" placeholder={t('Header.Search')} />
                         <img src={Search} alt="" />
                     </div>
                     <Link to={"/wishlist"} className='account-nav-cart'>

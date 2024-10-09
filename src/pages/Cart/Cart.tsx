@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import './Cart.scss'
 
+import { RiDeleteBin6Line } from "react-icons/ri";
+
 const Cart: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
     const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -23,6 +25,7 @@ const Cart: React.FC = () => {
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
+                    <th>Delete Item</th>
                 </tr>
 
 
@@ -35,6 +38,7 @@ const Cart: React.FC = () => {
                         <td>$ {item.price}</td>
                         <td>{item.quantity}</td>
                         <td>$ {item.subtotalPrice.toFixed(2)}</td>
+                        <td><RiDeleteBin6Line className='remove-icon' onClick={() => dispatch(removeItemFromCart(item.id))} /></td>
                     </tr>
                 ))}
 

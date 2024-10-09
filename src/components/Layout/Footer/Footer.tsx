@@ -8,19 +8,22 @@ import instagram from '../../../assets/icons/instagram.svg';
 import linkedin from '../../../assets/icons/linkedin.svg';
 import copyright from '../../../assets/icons/copyright.svg';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <>
             <div className='container footer'>
                 <div className='footer-section'>
-                    <p className='footer-section__heading'>Subscribe</p>
+                    <p className='footer-section__heading'>{t('Footer.Subscribe')}</p>
                     <ul>
-                        <li>Get 10% off your first order</li>
+                        <li>{t('Footer.Discount')}</li>
                     </ul>
                 </div>
                 <div className='footer-section'>
-                    <p className='footer-section__heading'>Support</p>
+                    <p className='footer-section__heading'>{t('Footer.Support')}</p>
                     <ul>
                         <li>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</li>
                         <li>sabuhimv@icloud.com</li>
@@ -28,32 +31,43 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className='footer-section'>
-                    <p className='footer-section__heading'>Account</p>
+                    <p className='footer-section__heading'>{t('Footer.Account')}</p>
                     <ul>
+                        {
+                            localStorage.getItem("loggedUserId") ?
+                                <li>
+                                    <Link to="/account">{t('Footer.AccountData.MyAccount')}</Link>
+                                </li>
+                                :
+                                <li>
+                                    <Link to="/signup">{t('Footer.AccountData.MyAccount')}</Link>
+                                </li>
+                        }
                         <li>
-                            <Link to="/account">My Account</Link>
+                            <Link to="/signup">{t('Footer.AccountData.Login')}</Link>
                         </li>
                         <li>
-                            <Link to="/signup">Login / Register</Link>
+                            <Link to="/cart">{t('Footer.AccountData.Cart')}</Link>
                         </li>
-                        <li>Cart</li>
-                        <li>Wishlist</li>
                         <li>
-                            <Link to="/">Shop</Link>
+                            <Link to="/cart">{t('Footer.AccountData.Wishlist')}</Link>
+                        </li>
+                        <li>
+                            <Link to="/">{t('Footer.AccountData.Shop')}</Link>
                         </li>
                     </ul>
                 </div>
                 <div className='footer-section'>
-                    <p className='footer-section__heading'>Quick Link</p>
+                    <p className='footer-section__heading'>{t('Footer.Quicklink')}</p>
                     <ul>
-                        <li>Privacy Policy</li>
-                        <li>Terms Of Use</li>
-                        <li>FAQ</li>
-                        <li>Contact</li>
+                        <li>{t('Footer.Links.Privarcy')}</li>
+                        <li>{t('Footer.Links.Terms')}</li>
+                        <li>{t('Footer.Links.FAQ')}</li>
+                        <li>{t('Footer.Links.Contact')}</li>
                     </ul>
                 </div>
                 <div className='footer-section'>
-                    <p className='footer-section__heading'>Download App</p>
+                    <p className='footer-section__heading'>{t('Footer.Download')}</p>
 
                     <div className='qrAndPayments'>
                         <div className='qr'>
@@ -75,7 +89,7 @@ const Footer = () => {
 
             <div className="container copyright">
                 <img src={copyright} alt="" />
-                <span>Copyright SabuhiMv 2024. All right reserved</span>
+                <span>{t('Footer.Copyright')}</span>
             </div>
         </>
     )
